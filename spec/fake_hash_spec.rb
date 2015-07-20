@@ -21,7 +21,7 @@ describe FakeHashWrapper do
       fake[:giraffes] = 'cute'
       fake[:cats] = 'the best'
       fake[:dogs] = 'also the best'
-      expect(fake.keys).to eq([:giraffes, :dogs, :cats])
+      expect(fake.keys).to eq(["giraffes", "dogs", "cats"])
     end
   end
 
