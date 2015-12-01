@@ -14,20 +14,16 @@ class FakeHashWrapper
   end
 
   def keys
-    array = @hash.keys.sort.reverse
+    @hash.keys.sort.reverse
   end
 
   def first_letter(letter)
-    arr = []
-    @hash.each do |key, value|
-      if key.to_s.start_with?(letter)
-        arr << value
-      end
-    end
-    arr
+    array = []
+    @hash.each {|key, value| key.to_s.start_with?(letter) ? array << value : nil}
+    array
   end
 
   def each
-    @hash.each {|k, v| yield k, v}
+    @hash.each {|k| yield k}
   end
 end
