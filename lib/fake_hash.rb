@@ -1,3 +1,5 @@
+require 'pry'
+
 class FakeHashWrapper
 	attr_accessor :fake_hash
 
@@ -18,9 +20,11 @@ class FakeHashWrapper
 	end
 
 	def first_letter(l)
-		@fake_hash.each_with_object([]) do |(key, value), array|
+		array = []
+		@fake_hash.each do |key, value|
       	array << value if key[0] == l
 		end
+		array
 	end
 
 	def each
